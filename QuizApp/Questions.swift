@@ -23,4 +23,11 @@ class Question{
         self.option4 = option4
         self.rightAns = rightAns
     }
+    
+    func checkAnswer(answer:String) -> Bool {
+        if answer.lowercased() == rightAns.lowercased() {
+            return true
+        }
+        return false
+    }
 }

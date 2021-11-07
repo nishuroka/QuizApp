@@ -13,13 +13,26 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var message: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
+    @IBOutlet weak var retakemsg: UILabel!
+    @IBOutlet weak var reTakeLabel: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         scoreLabel.text = String(score)
         message.text = getMessage(score: score)
+        
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func reTakeButton(_ sender: UIButton) {
+        if score == 1 || score == 2 || score == 0 {
+                performSegue(withIdentifier: "retake", sender: nil)
+            
+        }
+        else {
+            retakemsg.text = " Please head to main menu"
+            
+        }
+    }
     func getMessage(score:Int) -> String{
         switch score {
         case 3:
@@ -32,6 +45,7 @@ class ResultViewController: UIViewController {
             return "Please try again!"
         }
         
+       
         
     }
     

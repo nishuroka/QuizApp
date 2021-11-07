@@ -220,7 +220,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Back To Main Page &gt;&gt;"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="YKs-RS-EGb"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="backtomainpage" id="YKs-RS-EGb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Muy-e7-oFm">
@@ -228,6 +228,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Retake Quiz"/>
+                                <connections>
+                                    <action selector="reTakeButton:" destination="KCO-JB-O0W" eventType="touchUpInside" id="r69-uf-pN3"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJg-uL-wbw">
                                 <rect key="frame" x="36" y="275" width="358" height="49"/>
@@ -243,6 +246,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZq-OL-81N">
+                                <rect key="frame" x="81" y="452" width="243" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Dsf-O9-a2C"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -250,7 +260,10 @@
                     <navigationItem key="navigationItem" id="MQZ-iM-qzt"/>
                     <connections>
                         <outlet property="message" destination="GJg-uL-wbw" id="888-Q0-1Up"/>
+                        <outlet property="reTakeLabel" destination="Muy-e7-oFm" id="aKr-VK-9h7"/>
+                        <outlet property="retakemsg" destination="IZq-OL-81N" id="OQv-FN-BCg"/>
                         <outlet property="scoreLabel" destination="eQV-JI-DXq" id="aRK-xh-lIZ"/>
+                        <segue destination="z7h-DE-l0I" kind="show" identifier="retake" id="uMi-qZ-FzX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y10-0o-QnB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -258,6 +271,9 @@
             <point key="canvasLocation" x="1650.7246376811595" y="73.660714285714278"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="uMi-qZ-FzX"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="radio-checked" width="225" height="225"/>
         <image name="radio-unchecked" width="225" height="225"/>
